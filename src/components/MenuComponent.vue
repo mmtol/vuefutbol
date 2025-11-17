@@ -23,8 +23,8 @@
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Introduce nombre de jugador" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
+        <input class="form-control me-2" type="search" placeholder="Introduce nombre de jugador" aria-label="Search" v-model="nombre"/>
+        <button class="btn btn-outline-success" type="submit" @click="buscarJugadores">Buscar</button>
       </form>
     </div>
   </div>
@@ -41,7 +41,8 @@
         data()
         {
             return{
-                equipos:[]
+                equipos:[],
+                nombre:""
             }
         },
         mounted()
@@ -50,6 +51,14 @@
             {
                 this.equipos = result;
             })
+        },
+        methods:
+        {
+            buscarJugadores()
+            {
+                this.nombre = 
+                this.$router.push("/jugadores/"+this.nombre);
+            }
         }
     }
 </script>

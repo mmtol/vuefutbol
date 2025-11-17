@@ -15,7 +15,7 @@ const rutas =
         component:JugadoresComponent
     },
     {
-        path:"/dastosequipo/:idEquipo",
+        path:"/datosequipo/:idEquipo",
         component:DatosEquipoComponent
     }
 ]
